@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  target: 
+  killer: 
+  granted: false
+  date: 2014-01-23
+
+two:
+  target: 
+  killer: 
+  granted: false
+  date: 2014-01-23

@@ -1,0 +1,23 @@
+development:
+  adapter: mysql
+  encoding: utf8
+  database: spoons_development
+  username: root
+  password: thistle29
+  host: localhost
+
+test:
+  adapter: mysql
+  encoding: utf8
+  database: spoons_test
+  username: root
+  password: thistle29
+  host: localhost
+
+production:
+  adapter: mysql
+  encoding: utf8
+  database: spoons_production
+  username: root
+  password: thistle29
+  host: localhost

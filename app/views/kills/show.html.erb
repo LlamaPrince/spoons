@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Target:</strong>
+  <%= @kill.target %>
+</p>
+
+<p>
+  <strong>Killer:</strong>
+  <%= @kill.killer %>
+</p>
+
+<p>
+  <strong>Granted:</strong>
+  <%= @kill.granted %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @kill.date %>
+</p>
+
+<%= link_to 'Edit', edit_kill_path(@kill) %> |
+<%= link_to 'Back', kills_path %>

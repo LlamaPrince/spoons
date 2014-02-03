@@ -1,0 +1,36 @@
+<h1>Listing users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Hall</th>
+      <th>Gender</th>
+      <th>Status</th>
+      <th>Target</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.hall.name %></td>
+        <td><%= user.gender %></td>
+        <td><%= user.status %></td>
+        <td><%= user.target.name %></td>
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+ <td><%= link_to 'Scramble', scramble_user_path(1), method: :post, data: { confirm: "Are you sure you want to scramble?" } %></td>
+
+<br>
+
+<%= link_to 'New User', new_user_path %>

@@ -1,0 +1,33 @@
+<%= form_for(@kill) do |f| %>
+  <% if @kill.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@kill.errors.count, "error") %> prohibited this kill from being saved:</h2>
+
+      <ul>
+      <% @kill.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :target_id %><br>
+    <%= f.select :target_id , User.all.collect {|p| [ p.name, p.id ] }, { include_blank: true }%>
+  </div>
+  <div class="field">
+    <%= f.label :killer_id %><br>
+    <%= f.select :killer_id , User.all.collect {|p| [ p.name, p.id ] }, { include_blank: true } %>
+  </div>
+  <div class="field">
+    <%= f.label :granted %><br>
+    <%= f.check_box :granted %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.date_select :date %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

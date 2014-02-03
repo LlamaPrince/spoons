@@ -1,0 +1,37 @@
+<h1>Listing kills</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Target</th>
+      <th>Killer</th>
+      <th>Granted</th>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @kills.each do |kill| %>
+      <tr>
+        <td><%= kill.target.name %></td>
+        <td><%= kill.killer.name %></td>
+        <td><%= kill.granted %></td>
+        <td><%= kill.date %></td>
+        <td><%= link_to 'Show', kill %></td>
+        <td><%= link_to 'Edit', edit_kill_path(kill) %></td>
+        <td><%= link_to 'Destroy', kill, method: :delete, data: { confirm: 'Are you sure this kill is undeserving?' } %></td>
+	<% if !kill.granted %>
+        	<td><%= link_to 'Grant', grant_kill_path(kill), method: :post, data: { confirm: "Are you sure it's a good day to die?" } %></td>
+	<% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Kill', new_kill_path %>

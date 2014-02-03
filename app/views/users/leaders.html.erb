@@ -1,0 +1,25 @@
+<h1>Listing users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Number of Kills</th>
+      <th>Hall</th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <% @users.each do |use| %>
+      <tr>
+        <td><%= use.name %></td>
+        <td><%= use.number_of_kills %></td>
+        <td><%= use.hall_name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+

@@ -1,0 +1,33 @@
+<%= form_for(@message) do |f| %>
+  <% if @message.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@message.errors.count, "error") %> prohibited this message from being saved:</h2>
+
+      <ul>
+      <% @message.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.select :user_id, User.all.collect {|p| [ p.name, p.id ] }, { include_blank: true } %>
+  </div>
+  <div class="field">
+    <%= f.label :text %><br>
+    <%= f.text_field :text %>
+  </div>
+  <div class="field">
+    <%= f.label :target_id %><br>
+    <%= f.number_field :target_id %>
+  </div>
+  <div class="field">
+    <%= f.label :target_type %><br>
+    <%= f.text_field :target_type %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
